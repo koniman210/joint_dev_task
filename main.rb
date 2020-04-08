@@ -7,3 +7,4 @@ require './message'
 management = Management.new
 management.prompt_input
 management.output_answer
+names = ["田中", "佐藤", "佐々木", "高橋","斉藤"]

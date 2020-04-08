@@ -2,18 +2,19 @@
 # 回答の出力を確認される際は，「ruby main.rb」をターミナルから実行して下さい。
 
 def q1
-  names = ["田中", "佐藤", "佐々木", "高橋"]
+  names = ["田中", "佐藤", "佐々木", "高橋","斎藤"]
 
-  # 以下に回答を記載
+  # 以下naに回答を記載
+ puts names
 
 end
 
 def q2
   array1 = ["dog", "cat", "fish"]
   array2 = ["bird", "bat", "tiger"]
-
+array = array1 + array2
   # 以下に回答を記載
-
+puts array
 end
 
 def q3
