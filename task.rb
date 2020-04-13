@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下naに回答を記載
- names.push("斎藤")
+ names <<"斎藤"
  p names
 
 end
@@ -31,7 +31,7 @@ def q4
   # 以下に回答を記載
 
   # 以下は変更しないで下さい
-  p sports.reject {|item| item==nil}
+ p newsports = sports.compact
 end
 
 def q5
