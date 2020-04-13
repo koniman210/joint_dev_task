@@ -46,26 +46,29 @@ end
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
-  # 以下に回答を記載
+  # 下に回答を
+   numbers2 = numbers1.map {|n| n*10}
+    p numbers2
+   
 
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
-
   # 以下に回答を記載
 
   # 以下は変更しないで下さい
-  p array
+  p array.map!(&:to_i)
 end
 
 def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-
+  
+  
   # 以下は変更しないで下さい
-  p programming_languages
+  p programming_languages.
   p upper_case_programming_languages
 end
 
