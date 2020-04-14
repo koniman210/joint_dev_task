@@ -97,34 +97,36 @@ def q11
 
  
   # 以下に回答を記載
-  sports1 = sports.flatten
-  sports2 = sports1.uniq
+  
+  
   puts "ユーザーの趣味一覧"
-  sports2.each.with_index(1) do |sport,i|
+  sports.flatten.uniq.each.with_index(1) do |sport,i|
 puts "No#{i} #{sport}"
 end
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
+  
 
   # 以下に回答を記載
-
+p data[:user][:name]
 end
 
 def q13
   user_data = { name: "神里", age: 31, address: "埼玉" }
   update_data = { age: 32, address: "沖縄" }
 
+puts user_data.merge(update_data)
   # 以下に回答を記載
 
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
-
+ key =data.keys
   # 以下に回答を記載
-
+  p key
 end
 
 def q15
