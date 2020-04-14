@@ -88,12 +88,13 @@ def q10
 
 
   # 以下に回答を記載
-if foods.include?("うに")
+  foods.each do |food|
+if food.include?("うに")
   puts "好物です"
 else
   puts "まあまあ好きです"
 end
-
+end
 end
 
 def q11
