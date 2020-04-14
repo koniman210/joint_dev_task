@@ -92,19 +92,17 @@ def q10
  puts food.include?("うに") ?  "好物です": "まあまあ好きです"
  end
 end
-def q1
+def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
-sports[3]="フットサル"
-sports[6]="卓球"
-sports << "ボルダリング"
-puts "ユーザーの趣味一覧"
 
- sports.each.with_index(1) do |sport,i|
- puts "No#{i} #{sport}"
- end
+ 
   # 以下に回答を記載
-  
-
+  sports1 = sports.flatten
+  sports2 = sports1.uniq
+  puts "ユーザーの趣味一覧"
+  sports2.each.with_index(1) do |sport,i|
+puts "No#{i} #{sport}"
+end
 end
 
 def q12
