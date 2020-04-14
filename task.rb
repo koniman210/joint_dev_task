@@ -88,19 +88,22 @@ def q10
 
 
   # 以下に回答を記載
-  foods.each do |food|
-if food.include?("うに")
-  puts "好物です"
-else
-  puts "まあまあ好きです"
+ foods.each do |food|
+ puts food.include?("うに") ?  "好物です": "まあまあ好きです"
+ end
 end
-end
-end
-
-def q11
+def q1
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
+sports[3]="フットサル"
+sports[6]="卓球"
+sports << "ボルダリング"
+puts "ユーザーの趣味一覧"
 
+ sports.each.with_index(1) do |sport,i|
+ puts "No#{i} #{sport}"
+ end
   # 以下に回答を記載
+  
 
 end
 
