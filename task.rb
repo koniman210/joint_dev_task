@@ -154,9 +154,23 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  attr_accessor :name
+  attr_accessor :age
+  attr_accessor :gender
 
+  def initialize(name:,age:,gender:)
+  self.name = name
+  self.age = age
+  self.gender = gender
 end
-
+def info
+  puts <<~TEXT
+  名前：#{self.name}
+  年齢：#{self.age}
+  性別：#{self.gender}
+  TEXT
+end
+end
 def q17
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
   user1 = UserQ17.new(name: "神里", age: 32, gender: "男")
@@ -167,11 +181,24 @@ def q17
   user2.info
 end
 
+
 class UserQ18
+  attr_accessor :name
+  attr_accessor :age
   # 以下に回答を記載
+  def initialize(name:,age:)
+    self.name = name
+  self.age = age
+  end
 
+def introduce 
+  if age>=32 
+    puts "こんにちは，#{self.name}と申します。宜しくお願いいたします。"
+  else
+    "はいさいまいど〜，#{self.name}です！！！"
+  end
 end
-
+end
 def q18
   # ここは変更しないで下さい
   user1 = UserQ18.new(name: "あじー", age: 32)
