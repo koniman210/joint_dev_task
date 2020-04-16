@@ -156,7 +156,7 @@ class UserQ17
   # 以下に回答を記載
   
 
-  def initialize(params)
+  def initialize(**params)
   @name = params[:name]
   @age = params[:age]
   @gender = params[:gender]
