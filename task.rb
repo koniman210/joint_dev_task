@@ -208,7 +208,7 @@ end
 
 class Item
   # 以下を修正して下さい
-attr_accessor :name
+attr_reader :name
 
   def initialize(name:)
     @name = name
@@ -225,7 +225,7 @@ end
 
 class UserQ20
   # 以下に回答を記載
-  attr_accessor :name,:age
+  attr_reader :name,:age
 def initialize(name:,age:)
   @name=name
   @age=age
@@ -235,24 +235,25 @@ class Zoo
   # 以下に回答を記載
 def initialize(name:,entry_fee:)
   @entry_fee=entry_fee
-end
+
 end
 def info_entry_fee(user)
-  if 0<=@age>=5
-    
-    
-  elsif 6<=@age>=12
-    
-    
-  elsif 13<=@age>=64
-    
-    
-  else
-    
-    
-  end
-  
+  name=user.name
+  age=user.age
+  info_entry_fee=case age
+  when 0..5
+    @entry_fee[:infant]
+  when 6..12
+    @entry_fee[:children]
+  when 13..64
+    @entry_fee[:adult]
+   else
+    @entry_fee[:senior]
+   end
+   puts "#{name}さんの入場料金は#{info_entry_fee}円です"
 end
+end
+
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
   zoo = Zoo.new(name: "旭山動物園", entry_fee: { infant: 0, children: 400, adult: 800, senior: 500 })
