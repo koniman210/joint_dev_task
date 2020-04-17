@@ -89,7 +89,8 @@ def q10
 
   # 以下に回答を記載
  foods.each do |food|
- puts food.include?("うに") ?  "好物です": "まあまあ好きです"
+
+ puts food.include?("うに") ? "好物です": "まあまあ好きです"
  end
 end
 def q11
@@ -174,7 +175,7 @@ def q17
   user1 = UserQ17.new(name: "神里", age: 32, gender: "男")
   user2 = UserQ17.new(name: "あじー", age: 32, gender: "男")
 
-  user1.info
+   user1.info
   puts "-------------"
   user2.info
 end
@@ -190,11 +191,11 @@ class UserQ18
   end
 
 def introduce 
-  if @age>=20
+  @age>=20 ?
     "こんにちは，#{@name}と申します。宜しくお願いいたします。"
-  else
+  :
     "はいさいまいど〜，#{@name}です！！！"
-  end
+  
 end
 end
 def q18
@@ -209,12 +210,9 @@ end
 class Item
   # 以下を修正して下さい
 attr_reader :name
-
   def initialize(name:)
     @name = name
-    
   end
- 
 end
 
 def q19
@@ -239,21 +237,23 @@ def initialize(**params)
   @adult_entry_fee = params[:entry_fee][:adult]
   @senior_entry_fee = params[:entry_fee][:senior]
   @name = params[:name]
+  
 end
 def info_entry_fee(user)
-  if user.age >= 0 && user.age <= 5 
+  entry_fee=case user.age
+  when  0..5
     @infant_entry_fee
-  elsif user.age >= 6 && user.age <= 12
+  when  6..12
     @children_entry_fee
-  elsif user.age >= 13 && user.age <= 64 
+  when  13..64
     @adult_entry_fee
   else
     @senior_entry_fee
   end
-  puts "#{user.name}さんの入場料金は#{@entry_fee}円です"
-end
-end
+  puts "#{user.name}さんの入場料金は#{entry_fee}円です"
 
+end
+end
 
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
