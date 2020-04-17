@@ -184,9 +184,9 @@ class UserQ18
   
   
   # 以下に回答を記載
-  def initialize(name:,age:)
-    @name = name
-  @age = age
+  def initialize(**params)
+    @name = params[:name]
+  @age = params[:age]
   end
 
 def introduce 
@@ -232,27 +232,28 @@ def initialize(name:,age:)
 end
 end
 class Zoo
-  # 以下に回答を記載
-def initialize(name:,entry_fee:)
-  @entry_fee=entry_fee
-
+# 以下に回答を記載
+def initialize(**params)
+  @infant_entry_fee = params[:entry_fee][:infant]
+  @children_entry_fee = params[:entry_fee][:children]
+  @adult_entry_fee = params[:entry_fee][:adult]
+  @senior_entry_fee = params[:entry_fee][:senior]
+  @name = params[:name]
 end
 def info_entry_fee(user)
-  name=user.name
-  age=user.age
-  info_entry_fee=case age
-  when 0..5
-    @entry_fee[:infant]
-  when 6..12
-    @entry_fee[:children]
-  when 13..64
-    @entry_fee[:adult]
-   else
-    @entry_fee[:senior]
-   end
-   puts "#{name}さんの入場料金は#{info_entry_fee}円です"
+  if user.age >= 0 && user.age <= 5 
+    @infant_entry_fee
+  elsif user.age >= 6 && user.age <= 12
+    @children_entry_fee
+  elsif user.age >= 13 && user.age <= 64 
+    @adult_entry_fee
+  else
+    @senior_entry_fee
+  end
+  puts "#{user.name}さんの入場料金は#{@entry_fee}円です"
 end
 end
+
 
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
